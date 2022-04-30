@@ -1,8 +1,8 @@
 # Get the transformer model and tokenizer
 def get_transformer():
-    from transformers import GPTNeoForCausalLM, AutoTokenizer
-    model = GPTNeoForCausalLM.from_pretrained("EleutherAI/gpt-neo-6B") # I use finetune's fork
-    tokenizer = AutoTokenizer.from_pretrained("gpt2")
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+    tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+    model = AutoModelForCausalLM.from_pretrained("EleutherAI/gpt-j-6B")
     return model, tokenizer
 
 # Easy generation function
